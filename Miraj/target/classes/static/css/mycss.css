@@ -1,0 +1,17 @@
+div.mec
+{
+    width: 63%; margin: 0 auto;
+    position: relative;
+
+}
+#mytext
+{
+    display: none;
+    text-align: center;
+
+}
+#mytext2
+{
+    display: none;
+
+}

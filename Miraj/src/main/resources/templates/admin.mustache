@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Miraj</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+    <script src="js/jquery.js"></script>
+    <script src="js/myjss.js"></script>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="css/mycss.css" rel="stylesheet" media="all">
+</head>
+
+<body class="animsition">
+
+<div class="page-wrapper" >
+    <!-- MENU SIDEBAR-->
+    <div>
+
+    </div>
+    <!-- END MENU SIDEBAR-->
+
+    <!-- PAGE CONTAINER-->
+    <div >
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop">
+            <aside class="menu-sidebar d-none d-lg-block" >
+                <div class="logo" >
+                    <a href="/admin">
+                        <img src="images/icon/logo.png" alt="Cool Admin" />
+                    </a>
+                </div>
+                <img src="images/icon/admininkar.jpg" style="width: 179px;height: 89%; margin-left: 35px" />
+            </aside>
+            <div class="section__content section__content--p30" >
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <form class="form-header" action="" method="POST">
+                            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                        </form>
+                        <div class="header-button">
+                            <div class="noti-wrap" >
+
+                                <div class="noti__item js-item-menu" >
+                                    <i class="zmdi zmdi-email"></i>
+                                    {{#readmessage}}
+                                        <span class="quantity" ><label id="block">{{adminid}}</label></span>
+                                    {{/readmessage}}
+                                    <div class="email-dropdown js-dropdown">
+                                        <div class="email__item">
+                                            <div class="image img-cir img-40">
+                                                <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey" />
+                                            </div>
+                                            <div class="content">
+                                                {{#lastmessage}}
+                                                <p>{{name}}</p>
+                                                <span>{{email}}</span>
+                                                {{/lastmessage}}
+                                            </div>
+                                        </div>
+                                        <form  method="post" action="/messagetable">
+                                                <div >
+                                                    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                                                    <button style="padding-left: 110px;padding-right: 110px" type="submit"><p >See all messages</p></button>
+                                                </div>
+                                            </form>
+
+                                    </div>
+                                </div>
+
+                                <div class="noti__item js-item-menu" >
+                                    <i class="zmdi zmdi-notifications"></i>
+                                {{#readreserve}}
+                                    <span class="quantity"><div id="block2">{{adminid}}</div></span>
+                                {{/readreserve}}
+                                    <div class="notifi-dropdown js-dropdown">
+                                        <div class="notifi__title">
+                                {{#readreserve}} <p>You have {{adminid}} Notifications</p>{{/readreserve}}
+                                        </div>
+
+                                        <div class="notifi__item">
+                                            <div class="bg-c1 img-cir img-40">
+                                                <i class="zmdi zmdi-email-open"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p> reserve notification.</p>
+                                                <span class="date"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="notifi__footer">
+                                            <form  method="post" action="/reservetable">
+                                                <div >
+                                                    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                                                    <button style="padding-left: 110px;padding-right: 110px" type="submit"><p >All notifications</p></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+                                    <div class="image">
+                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                    </div>
+                                    <div class="content">
+                                        <a class="js-acc-btn" href="#">Admin</a>
+                                    </div>
+                                    <div class="account-dropdown js-dropdown">
+                                        <div class="info clearfix">
+                                            <div class="image">
+                                                <a href="#">
+                                                    <img src="images/icon/avatar-01.jpg" alt="Admin" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="name">
+                                                    <a href="#">Admin</a>
+                                                </h5>
+                                                <span class="email">mirajaxveran@gmail.com</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="account-dropdown__footer">
+                                            <form  method="post" action="/logout">
+                                            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                                            <button style="padding-left: 110px;padding-right: 110px" type="submit">
+                                                <i class="zmdi zmdi-power"></i>Logout</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- HEADER DESKTOP-->
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+
+                    <div class="row">
+                        <div class="mec">
+                            <!--im button-->
+                            <div id="bookingForm">
+                                <form  method="post" action="/deletereserve">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="overview-wrap">
+                                            <h2 class="title-1">Please enter ID</h2>
+                                            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                                            <input type="number" required  name="deletereserve" style=" border: 1px solid black;width: 150px" placeholder="ID">
+                                            <button class="au-btn au-btn-icon au-btn--blue">delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+
+                        <div class="col-lg-20">
+                            <h2 class="title-1 m-b-25">Reservation table</h2>
+                            <div class="table-responsive table--no-card m-b-40">
+                                <table class="table table-borderless table-striped table-earning">
+                                    <thead>
+                                    <tr >
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Lastname</th>
+                                        <th>Date</th>
+                                        <th>Phone</th>
+                                        <th>People</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#reserve}}
+                                            <tr><td >{{id}}</td>
+                                                <td style="text-align: center">{{name}}</td>
+                                                <td style="text-align: center">{{lastname}}</td>
+                                                <td style="text-align: center">{{date}}</td>
+                                                <td style="text-align: center">{{phone}}</td>
+                                                <td style="text-align: center">{{numberofpeople}}</td>
+
+                                             </tr>
+                                    {{/reserve}}
+                                    </tbody>
+                                </table>
+                                <link rel="stylesheet" href="booking/css/booking.css">
+
+
+                            </div>
+                        </div>
+                            <div id="bookingForm">
+                                <form  method="post" action="/deletemessage">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="overview-wrap">
+                                                <h2 class="title-1">Please enter ID</h2>
+                                                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                                                <input required type="number" name="deletemessage" style=" border: 1px solid black;width: 150px" placeholder="ID">
+                                                <button class="au-btn au-btn-icon au-btn--blue">delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        <div class="col-lg-20">
+                            <h2 class="title-1 m-b-25">message table</h2>
+                            <div class="table-responsive table--no-card m-b-40">
+                                <table class="table table-borderless table-striped table-earning">
+                                    <thead>
+                                    <tr >
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Message</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {{#message}}
+                                        <tr><td>{{id}}</td>
+                                            <td style="text-align: center">{{name}}</td>
+                                            <td style="text-align: center">{{email}}</td>
+                                            <td style="text-align: center">{{phone}}</td>
+                                            <td >
+                                                <label id="bookingForm">
+                                                    <div class="tmTextarea">
+                                                        <textarea   data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'>{{sms}}</textarea>
+                                                    </div>
+                                                </label>
+
+                                            </td>
+                                        </tr>
+                                    {{/message}}
+                                    </tbody>
+                                </table>
+                                <link rel="stylesheet" href="booking/css/booking.css">
+                                <!--<label id="bookingForm">-->
+                                    <!--<div class="tmTextarea">-->
+                                        <!--<textarea id="output"  data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>-->
+                                    <!--</div>-->
+                                <!--</label>-->
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2018 Miraj </p>
+                                <p>The website developed by Vanik Dallakyan(dallakyanvanik@gmail.com)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT-->
+        <!-- END PAGE CONTAINER-->
+    </div>
+
+</div>
+
+
+
+
+
+
+<!-- Jquery JS-->
+<script src="vendor/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap JS-->
+<script src="vendor/bootstrap-4.1/popper.min.js"></script>
+<script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+<!-- Vendor JS       -->
+<script src="vendor/slick/slick.min.js">
+</script>
+<script src="vendor/wow/wow.min.js"></script>
+<script src="vendor/animsition/animsition.min.js"></script>
+<script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+</script>
+<script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+<script src="vendor/counter-up/jquery.counterup.min.js">
+</script>
+<script src="vendor/circle-progress/circle-progress.min.js"></script>
+<script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="vendor/chartjs/Chart.bundle.min.js"></script>
+<script src="vendor/select2/select2.min.js">
+</script>
+
+<!-- Main JS-->
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->

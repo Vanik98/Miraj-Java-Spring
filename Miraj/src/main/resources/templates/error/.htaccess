@@ -1,0 +1,1 @@
+ErrorDocument 404 http://http://localhost:8080/404.html

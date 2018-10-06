@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Miraj</title>
+    <meta charset="utf-8">
+    <meta name = "format-detection" content = "telephone=no" />
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/stuck.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <script src="js/myjss.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+            $('#stuck_container').tmStickUp({});
+            $('.gallery .gall_item').touchTouch();
+
+        });
+    </script>
+    <!--[if lt IE 9]>
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0"
+                 height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a>
+    </div>
+    <script src="js/html5shiv.js"></script>
+    <link rel="stylesheet" media="screen" href="css/ie.css">
+
+
+    <![endif]-->
+</head>
+
+<body>
+<!--==============================
+              header
+=================================-->
+<header>
+    <!--==============================
+                Stuck menu
+    =================================-->
+    <section id="stuck_container">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12">
+                    <h1>
+                        <a href="/ru-home">
+                            <img src="images/logo.png" alt="Logo alt">
+                        </a>
+                    </h1>
+                    <div class="navigation">
+                        <nav>
+                            <ul class="sf-menu">
+                                <li ><a href="/ru-home" style="font-size: 17px">Главная</a></li>
+                                <li><a href="/ru-image" style="font-size: 17px">Картинки</a></li>
+                                <li><a href="/ru-reservation" style="font-size: 17px">Забронировать</a></li>
+                                <li><a href="/ru-information" style="font-size: 17px">Информация</a></li>
+                                <li class="current"><a href="/ru-contacts" style="font-size: 17px">Контакты</a></li>
+                                <li ><a href="/am-contacts" style="font-size: 12px">Հայ</a>
+                                    <a href="/en-contacts" style="font-size: 15px">Eng</a></li>
+                            </ul>
+                        </nav>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+<!--=====================
+          Content
+======================-->
+<section class="content ctn__1"><div class="ic"></div>
+    <div class="container">
+        <div class="row">
+            <div class="grid_12">
+                <h2>Find Us</h2>
+                <div class="map">
+                    <div class="row">
+                        <div class="grid_9">
+                            <figure class="">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3034.728545818614!2d44.59553785457963!3d40.48127003535134!3m2!1i1024!2i768!4f13.1!5e0!3m2!1shy!2s!4v1531756081159" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </figure>
+                        </div>
+                        <div class="grid_3">
+                            <div class="map_block">
+                                {{#mytext2}}
+                                    <input id="mytext2" name="mytext2" type="text"  value="{{adminid}}" readonly
+                                           style="border: 2px;font-style: oblique;color: red;font-size:12px;width: 250px"/>
+                                {{/mytext2}}
+                                <div class="map_title">Адрес:</div>
+                                Армения,  Котайкский марз, Арзакан община <br>
+                                (Зона отдыха «Агверан») (Разданский район)
+                            </div>
+                            <div class="map_block">
+                                <div class="map_title">Телефон:</div>
+                                +374 99 160817 <br>+374 94 831466
+                            </div>
+                            <div class="map_block">
+                                <div class="map_title">Электронная почта:</div>
+                                <p>mirajaxveran@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid_8">
+            </div>
+        </div>
+    </div>
+</section>
+<div class="form_block">
+    <div class="container">
+        <div class="row">
+            <div class="grid_11">
+                <h2 style="font-size: 25px">Контактная форма</h2>
+                <form id="form" method="post" action="/message">
+                    <div class="form_spinner">
+                        <img src="images/Preloader_4.gif" alt="">
+                    </div>
+                    <div class="modal fade response-message">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="response-error-message"></div>
+                    <label class="name">
+                        <input required type="text" name="Name2" pattern="[A-Za-z\s]{2,15}"
+                               title="Введите символы латинского алфавита с реальными данными"
+                               placeHolder="Имя:" value="" data-constraints="@Required @JustLetters" />
+                    </label>
+                    <label class="email">
+                        <input required type="text" name="email" placeHolder="Эл. почта:"
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                               title="Введите реальные данные"
+                               value="" data-constraints="@Required @Email" />
+                    </label>
+                    <label class="phone">
+                        <input required type="text" name="Phone2" placeHolder="Телефон:"
+                               pattern="[0-9]{6,12}" title="Введите реальный номер"
+                               value="" data-constraints="@Required @JustNumbers"/>
+                    </label>
+                    <label  class="message">
+                        <textarea required name="message" placeholder="сообщение:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+                    </label>
+                    <input id="pagecontacts" name="pagecontacts" type="hidden" value="ru"/>
+                    <div class="clear"></div>
+                    <div class="btns">
+                        <a href="#" data-type="reset" class="btn2">удалить</a>
+                        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                        <button data-type="submit" class="btn2" >отправить</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--==============================
+              footer
+=================================-->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="grid_12">
+                <div class="socials">
+                    <a href="https://www.facebook.com/people/Հանգստի.../100010159339185" class="fa fa-facebook"></a>
+                    <a href="https://twitter.com/" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google-plus"></a>
+                    <a href="https://www.pinterest.com/" class="fa fa-pinterest"></a>
+                </div>
+                <div class="copyright"><span class="brand">Copyright </span> &copy; <span id="copyright-year">2018</span> | Miraj <div>The website developed by Vanik Dallakyan(dallakyanvanik@gmail.com)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

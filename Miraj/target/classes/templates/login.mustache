@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Miraj login</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+    <link href="css/mycss.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/stuck.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/touchTouch.css">
+    <script src="js/myjss.js"></script>
+
+</head>
+<body >
+<header>
+    <section id="stuck_container">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12">
+                    <h1>
+                        <a href="/en-home">
+                            <img src="images/logo.png" alt="Logo alt">
+                        </a>
+                    </h1>
+                    <div class="navigation">
+                        <nav>
+                            <ul class="sf-menu">
+                                <li class="current"><a href="/en-home">Home</a></li>
+                                <li><a href="/en-image">Images</a></li>
+                                <li><a href="/en-reservation">Reservation</a></li>
+                                <li><a href="/en-information">Information</a></li>
+                                <li ><a href="/en-contacts">Contacts</a></li>
+                                <li ><a href="/am-home" style="font-size: 12px">Հայ</a>
+                                    <a href="/ru-home" style="font-size: 12px">Рус</a></li>
+                            </ul>
+                        </nav>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+<form method="post" action="/login">
+    <div class="login" onload="a()">
+        <input id="idtext" class="txt1" style="text-align: center;" type="text" value="Please enter your login detalis." readonly>
+        <input style="display: none" id="noid" name="logtxt" class="txt1" type="text" value="vanya">
+        <br><br><br><h4> Username</h4><input id="logid" name="username" class="txt1"  type="text"  placeholder="Username"/>
+        <br><br><h4> Password</h4>
+        <input id="pasid" name="password" class="txt1" type="password" placeholder="Password"/>
+        <br><br>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <div class="ta__right">
+            <input  class="btn" type="submit" value="Login">
+        </div>
+    </div>
+</form>
+<a href="/registration">Add new user</a>
+
+<style>div.login {
+    width: 384px;
+    height: 235px;
+    margin: 0 auto;
+    margin-top: 8%;
+    border: 1px solid black;
+    padding: 10px;
+    background-color:white;
+}
+
+.txt1
+{
+    position: absolute;
+    width:380px;
+    height:35px;
+    font-size:15px;
+}
+</style>
+</body>
+</html>
